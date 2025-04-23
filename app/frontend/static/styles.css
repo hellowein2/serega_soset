@@ -7,9 +7,10 @@ body {
     width: 100vw;
     height: 100vh;                            /* Устанавливает высоту на 100% высоты видимого экрана */
     overflow: hidden;                         /* Убирает прокрутку, если нужно */
-    position: fixed;
 }
-
+html {
+position: fixed;
+}
 
 .photo-container {
     position: relative;
