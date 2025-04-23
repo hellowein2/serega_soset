@@ -1,0 +1,11 @@
+version: '2.35.1'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"  # Пробрасываем порт 80 сервера на 80 порт контейнера
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
