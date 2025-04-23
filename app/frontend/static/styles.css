@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.photo-container {
+    width: 300px; /* Width of the photo */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.active {
+    transform: translateX(0);
+}
