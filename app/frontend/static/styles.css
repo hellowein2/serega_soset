@@ -1,27 +1,78 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background-color: #f2f2f2;
+    overflow: hidden;
+    background-image: url('/static/images/background.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Масштабирует изображение, чтобы оно охватывало весь контейнер */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Изображение не будет повторяться */
 }
 
 .photo-container {
-    width: 300px; /* Width of the photo */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    transition: transform 1s ease-in-out;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .photo {
-    width: 100%;
-    height: auto;
-    display: block;
+    position: absolute;
+    top: -100%; /* Начальная позиция за экраном сверху */
+    transition: top 2s ease-in-out, transform 2s ease-in-out;
+    transform: translateY(-50%) scale(0.5); /* Для плавного начала анимации */
 }
 
-.active {
-    transform: translateX(0);
+.photo.enter {
+    top: 50%;
+    transform: translateY(-50%) scale(0.3);
+}
+
+.photo.exit {
+    top: 150%; /* Уходит за нижнюю границу */
+    transform: translateY(50%) scale(0.5);
+}
+
+@keyframes floatLeft {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(300px); /* Движение влево на 100 пикселей */
+    }
+}
+
+@keyframes floatRight {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(-300px); /* Движение вправо на 100 пикселей */
+    }
+}
+
+.text-left {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 1;
+    animation: floatLeft 3s ease-in-out infinite;
+}
+
+.text-right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 1;
+    animation: floatRight 3s ease-in-out infinite;
 }
