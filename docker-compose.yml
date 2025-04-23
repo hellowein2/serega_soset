@@ -4,18 +4,17 @@ services:
   web:
     build: .
     ports:
-      - "80:80"  # Пробрасываем порт 80 сервера на 80 порт контейнера
+      - "8000:80"  # Порт 8000 хост-системы перенаправляется на порт 80 контейнера
     volumes:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
 
   nginx:
-      image: nginx:latest
-      ports:
-        - "80:80"
-        - "443:443"
-      volumes:
-        - ./nginx.conf:/etc/nginx/nginx.conf
-      depends_on:
-        - web
+    image: nginx:latest
+    ports:
+      - "80:80"  # Прослушивает порты 80 хоста и контейнера
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
