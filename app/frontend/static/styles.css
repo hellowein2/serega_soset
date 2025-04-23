@@ -4,6 +4,7 @@ body {
     background-position: center;              /* Центрирует изображение */
     background-repeat: no-repeat;             /* Отключает повтор */
     margin: 0;                                /* Убирает отступы */
+    width: 100vw;
     height: 100vh;                            /* Устанавливает высоту на 100% высоты видимого экрана */
     overflow: hidden;                         /* Убирает прокрутку, если нужно */
 }
