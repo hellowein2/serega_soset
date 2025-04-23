@@ -1,14 +1,13 @@
 body {
-    margin: 0;
-    position: fixed;
-    overflow: hidden;
-    width: 100vw;
-    background-image: url('/static/images/background.jpg'); /* Укажите путь к вашему изображению */
-    background-size: cover; /* Масштабирует изображение, чтобы оно охватывало весь контейнер */
-    background-position: center; /* Центрирует изображение */
-    background-repeat: no-repeat; /* Изображение не будет повторяться */
-    height: 100vh;
+    background-image: url('your-image.jpg');  /* Замените 'your-image.jpg' на фактический путь к вашему изображению */
+    background-size: cover;                   /* Заставляет изображение покрывать всю видимую область */
+    background-position: center;              /* Центрирует изображение */
+    background-repeat: no-repeat;             /* Отключает повтор */
+    margin: 0;                                /* Убирает отступы */
+    height: 100vh;                            /* Устанавливает высоту на 100% высоты видимого экрана */
+    overflow: hidden;                         /* Убирает прокрутку, если нужно */
 }
+
 
 .photo-container {
     position: relative;
