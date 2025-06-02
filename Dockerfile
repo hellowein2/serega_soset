@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Указываем порт, который будет прослушивать наш сервер внутри контейнера
-EXPOSE 443
+EXPOSE 80
 
 # Команда для запуска приложения
-CMD ["uvicorn", "app.backend.main:app", "--host", "0.0.0.0", "--port", "443"]
+CMD ["uvicorn", "app.backend.main:app", "--host", "0.0.0.0", "--port", "80"]
