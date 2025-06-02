@@ -3,8 +3,6 @@ version: '2.35.1'
 services:
   web:
     build: .
-    ports:
-      - "8000:80"  # Порт 8000 хост-системы перенаправляется на порт 80 контейнера
     volumes:
       - .:/app
     environment:
